@@ -12,7 +12,7 @@ total = 0
 
 print("-----------MENU-----------")
 for key, value in menu.items():
-  print(f"{key:10}: ${value:2f}")
+  print(f"{key:10}: ${value:.2f}")
 print("-------------------------")
 
 while True:
@@ -22,4 +22,10 @@ while True:
   elif menu.get(food) is not None:
      cart.append(food)
 
-print(cart)
+print("---------- Your order ---------------")
+for food in cart:
+   total += menu.get(food)
+   print(food, end = " ")
+
+print()
+print(f"Total is: ${total: .2f}")
